@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI FUTURE FEST 2026 | DEV PORTAL</title>
+    <style>
+        :root {
+            --bg: #0b0c10;
+            --card-bg: #1f2833;
+            --cyan: #66fcf1;
+            --dark-cyan: #45a29e;
+            --text: #c5c6c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+        }
+
+        /* Боковая панель (Навигация) */
+        nav {
+            width: 250px;
+            background: #000;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            border-right: 1px solid var(--dark-cyan);
+        }
+
+        nav h2 { color: var(--cyan); font-size: 1.2rem; margin-bottom: 30px; }
+
+        nav a {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--dark-cyan);
+            color: white;
+        }
+
+        /* Основной контент */
+        main {
+            margin-left: 290px;
+            padding: 40px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        h1, h2, h3 { color: var(--cyan); }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            background: #2ecc71;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #0b0c10;
+            border: 1px solid var(--dark-cyan);
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: var(--cyan);
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        button:hover { background: white; transform: scale(1.01); }
+
+        /* Сетка команды */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .dev-card {
+            text-align: center;
+            background: #161b22;
+            padding: 20px;
+            border-radius: 10px;
+            border-bottom: 3px solid var(--cyan);
+        }
+
+        code { color: var(--cyan); background: #000; padding: 2px 5px; }
+
+        /* Интерактивный билет */
+        .ticket {
+            display: none;
+            background: linear-gradient(135deg, #1f2833 0%, #000000 100%);
+            border: 2px dashed var(--cyan);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+            position: relative;
+            animation: fadeIn 0.8s;
+        }
+        .ticket h3 { margin-top: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .ticket-number { color: #2ecc71; font-weight: bold; font-family: monospace; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>FEST PORTAL</h2>
+    <a onclick="showTab('home')" id="link-home" class="active">🏠 Главная</a>
+    <a onclick="showTab('course')" id="link-course">📚 О курсе</a>
+    <a onclick="showTab('dev')" id="link-dev">💻 Разработчики</a>
+    <a onclick="showTab('reg')" id="link-reg">🔑 Регистрация</a>
+</nav>
+
+<main>
+    <!-- ТАБ: ГЛАВНАЯ -->
+    <div id="home" class="tab-content active">
+        <h1>Добро пожаловать в Dev-Portal 2026</h1>
+        <div class="card">
+            <div class="status-badge">СИСТЕМА АКТИВНА</div>
+            <p>Этот портал является техническим расширением основного лендинга на Tilda. Здесь аккумулируются данные по воркшопам, спецификации нейросетей и инструменты для локального развертывания AI-агентов.</p>
+            <p><strong>Текущая фаза:</strong> Прием заявок участников и тестирование систем.</p>
+        </div>
+    </div>
+
+    <!-- ТАБ: О КУРСЕ -->
+    <div id="course" class="tab-content">
+        <h2>Программа интенсива</h2>
+        <div class="card">
+            <h3>Модуль 1: Визуальный инжиниринг</h3>
+            <p>Изучение стилистики <code>Mobile Legends</code> и <code>Cid Kagenou</code> для создания игровых ассетов через Stable Diffusion.</p>
+        </div>
+        <div class="card">
+            <h3>Модуль 2: Локальные LLM</h3>
+            <p>Настройка <code>Ollama</code> и <code>Cline</code>. Оптимизация под системы с 8GB RAM. Устранение ошибок <code>Request Timeout</code> через системные переменные.</p>
+        </div>
+        <div class="card">
+            <h3>Модуль 3: Автоматизация</h3>
+            <p>Написание Selenium-скриптов для сбора данных и тестирования веб-интерфейсов.</p>
+        </div>
+    </div>
+
+    <!-- ТАБ: РАЗРАБОТЧИКИ -->
+    <div id="dev" class="tab-content">
+        <h2>Core Team</h2>
+        <div class="team-grid">
+            <div class="dev-card">
+                <h3>Lead Architect</h3>
+                <p>Специалист по локальному развертыванию ИИ-агентов и системной оптимизации.</p>
+            </div>
+            <div class="dev-card">
+                <h3>UI/UX Designer</h3>
+                <p>Эксперт по платформе Tilda и интеграции анимаций в веб-интерфейсы.</p>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+            <h3>Технический стек проекта</h3>
+            <p>Проект разработан с использованием:</p>
+            <ul>
+                <li>HTML5 / CSS3 (Custom Grid Layout)</li>
+                <li>VS Code + Cline (AI Assistant)</li>
+                <li>GitHub Pages Hosting</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ТАБ: РЕГИСТРАЦИЯ -->
+    <div id="reg" class="tab-content">
+        <h2>Регистрация на интенсив</h2>
+        
+        <!-- Форма регистрации -->
+        <div class="card" id="formContainer">
+            <p>Заполните стандартную анкету участника, чтобы зарезервировать место и сгенерировать пропуск:</p>
+            <form id="mainForm">
+                <label>Имя и Фамилия:</label>
+                <input type="text" id="userName" placeholder="Иван Иванов" required>
+                
+                <label>Контактный Email:</label>
+                <input type="email" id="userEmail" placeholder="example@mail.ru" required>
+
+                <label>Основное направление:</label>
+                <select id="userTrack">
+                    <option value="AI-Research (Разработка)">AI-Research (Ollama, скрипты)</option>
+                    <option value="Frontend Dev (Интерфейсы)">Frontend Dev (Tilda, HTML)</option>
+                    <option value="Prompt Engineering (Контент)">Prompt Engineering (Графика, тексты)</option>
+                </select>
+                
+                <button type="button" onclick="completeReg()">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            </form>
+        </div>
+
+        <!-- Сгенерированный электронный билет -->
+        <div class="ticket" id="ticketContainer">
+            <h3>🎫 Электронный билет участника</h3>
+            <p><strong>Имя:</strong> <span id="lblName"></span></p>
+            <p><strong>Email:</strong> <span id="lblEmail"></span></p>
+            <p><strong>Направление:</strong> <span id="lblTrack"></span></p>
+            <p><strong>Ваш персональный ID:</strong> <span class="ticket-number" id="lblID"></span></p>
+            <p style="font-size: 0.85rem; color: #888; border-top: 1px solid #333; padding-top: 10px; margin-bottom: 0;">
+                *Сохраните этот ID. Он потребуется вам во 2-й день интенсива для авторизации в локальной сети хакатона.
+            </p>
+        </div>
+    </div>
+</main>
+
+<script>
+    function showTab(tabId) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => link.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        document.getElementById('link-' + tabId).classList.add('active');
+    }
+
+    function completeReg() {
+        const name = document.getElementById('userName').value.trim();
+        const email = document.getElementById('userEmail').value.trim();
+        const track = document.getElementById('userTrack').value;
+
+        // Простая проверка на заполнение полей
+        if (name === "" || email === "") {
+            alert("Пожалуйста, заполните поля Имя и Email!");
+            return;
+        }
+
+        // Генерация случайного ID участника в красивом формате
+        const randomID = "AIF-" + Math.floor(100000 + Math.random() * 900000);
+
+        // Заполняем данные в билет
+        document.getElementById('lblName').innerText = name;
+        document.getElementById('lblEmail').innerText = email;
+        document.getElementById('lblTrack').innerText = track;
+        document.getElementById('lblID').innerText = randomID;
+
+        // Прячем форму и плавно показываем билет
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('ticketContainer').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
