@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI FUTURE FEST 2026 | Регистрация и Документация</title>
+    <style>
+        :root {
+            --primary-bg: #0D0E12;
+            --accent-green: #39FF14;
+            --text-color: #E0E0E0;
+            --card-bg: #1A1C23;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 { color: var(--accent-green); text-transform: uppercase; }
+
+        /* Стили формы */
+        .auth-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            margin-bottom: 40px;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: var(--accent-green); }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            background: #252833;
+            border: 1px solid #444;
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: var(--accent-green);
+            color: black;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Технический раздел */
+        .docs-section {
+            background: #111;
+            padding: 20px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        pre {
+            background: #000;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #88ee88;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>AI FUTURE FEST 2026</h1>
+        <p>Техническая панель управления участника</p>
+    </header>
+
+    <!-- Секция регистрации -->
+    <section class="auth-card">
+        <h2>Локальная авторизация</h2>
+        <p style="font-size: 0.9em; color: #888;">(Данные сохраняются в сессии вашего браузера для работы с локальными агентами)</p>
+        
+        <form id="regForm">
+            <div class="form-group">
+                <label>ID Участника (согласно списку группы):</label>
+                <input type="text" placeholder="Например: ST-2026-01" required>
+            </div>
+            <div class="form-group">
+                <label>Стек технологий:</label>
+                <select>
+                    <option>Дизайн (Tilda / Figma)</option>
+                    <option>Разработка (Ollama / Python)</option>
+                    <option>Промпт-инжиниринг</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Токен доступа к API (для хакатона):</label>
+                <input type="password" placeholder="••••••••••••">
+            </div>
+            <button type="button" onclick="alert('Вы успешно авторизованы в системе фестиваля!')">ВОЙТИ В СИСТЕМУ</button>
+        </form>
+    </section>
+
+    <!-- Технический контент (Для методички) -->
+    <section class="docs-section">
+        <h2>Технический стек проекта</h2>
+        <ul>
+            <li><strong>Frontend:</strong> Tilda Publishing (визуальная часть).</li>
+            <li><strong>Backend Docs:</strong> GitHub Pages (техническая база).</li>
+            <li><strong>Инструментарий:</strong> Ollama, VS Code, Cline.</li>
+        </ul>
+        
+        <h3>Конфигурация окружения для воркшопа</h3>
+        <p>Для успешного прохождения 2-го дня фестиваля используйте следующие настройки таймаута для ваших локальных агентов:</p>
+        <pre>
+# Настройка для Ollama при работе с тяжелыми моделями
+$env:OLLAMA_REQUEST_TIMEOUT = "600s"
+ollama serve
+        </pre>
+        <p>Это обеспечит стабильную генерацию кода даже на стандартных системах с 8GB RAM.</p>
+    </section>
+
+    <footer style="margin-top: 50px; text-align: center; color: #555;">
+        <p>&copy; 2026 Проект выполнен для колледжа. Все права защищены.</p>
+    </footer>
+</div>
+
+</body>
+</html>
